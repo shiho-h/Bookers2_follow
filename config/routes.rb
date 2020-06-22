@@ -12,4 +12,7 @@ devise_for :users, controllers: {
   }
 
 
+
+
+resources :users, only: [:show]
 end
