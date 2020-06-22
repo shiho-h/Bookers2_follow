@@ -1,8 +1,6 @@
 <html><head>
 
 
-    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
-    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
   <title>Bookers</title><meta name="csrf-param" content="authenticity_token"><meta name="csrf-token" content="/kc2TuAap9M6yErcEEuux1yheI8EBIJ1eA6ObshzY4i5cF/gM3wuyOYWtSaXFQ1C7thqo8V5x6YN617Q0vm+QQ=="></head>
 
   <body>
@@ -36,16 +34,21 @@
        <% if @user.id == current_user.id %>
         <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
     <% end %>
-      <tbody><tr></tr>
-      <tr>
-    	  <th>name</th>
+      <tbody>
+        <a>name</a>
+      <tr><div class="profile-container">
+    <h3 class="profile-name"><%= @user.name %></h3></div></tr>
+    <a>introduction</a>
+      <tr><div class="profile-container">
+    <h3 class="profile-introduction"><%= @user.introduction %></h3></div></tr>
+
+</div></tbody></table>
+
+    	  <!-- <th>name</th>
     	  <th>hiro</th>
       </tr>
       <tr>
-    	  <th>introduction</th>
-    	  <th></th>
-      </tr>
-</tbody></table>
+    	 <th>introduction</th> -->
 
 <div class="row">
   <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_19598" href="/users/19598/edit"></a>

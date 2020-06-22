@@ -14,5 +14,5 @@ devise_for :users, controllers: {
 
 
 
-resources :users, only: [:show, :edit]
+resources :users, only: [:show, :edit, :update]
 end
