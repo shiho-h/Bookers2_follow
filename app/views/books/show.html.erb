@@ -1,0 +1,16 @@
+<% if flash[:notice] %> 
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+
+<h2>Title:</h2>
+<p><%= @book.title %></p>
+<h2>Body:</h2>
+<p><%= @book.body %></p>
+
+
+
+<!-- 編集部分 -->
+<%= link_to "Edit", edit_book_path(@book) %>
+<!-- 戻るボタン -->
+<%= link_to "Back",books_path %>
