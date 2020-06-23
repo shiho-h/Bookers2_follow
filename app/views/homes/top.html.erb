@@ -1,56 +1,16 @@
-<html><head>
-    <title>Bookers</title>
-    <meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="vUUxsaROua+mez/sno+DCy84yE22I0TgNG+7JH+orLdIDfv+1qpUG8Fdzqwj1FBPpd2ZRAWOyVwgVw3IOPFQ1g==">
+<p><%= flash[:notice] %></p>
 
-    <link rel="stylesheet" media="all" href="/assets/application-945628f9f95377705c9108ec9a9704e6f6ffa0767c02e34400d75b5be64fc1b7.css" data-turbolinks-track="reload">
-    <script src="/assets/application-11e027fe501efa6924bd87aa8f6ef7436fd1539022b412029c4a223dec9664f8.js" data-turbolinks-track="reload"></script>
-  </head>
-
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-
-</header>
-
-  	<div class="body">
-      <div class="container">
-
-        <p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
 
 
-      	<div class="row">
-  <div class="top-message col-md-offset-3 col-md-6">
-    <h1>welcome to <span class="glyphicon glyphicon-book"><strong>Bookers</strong>  !!</span></h1>
-          <p>In  <span class="glyphicon glyphicon-book"></span><strong>Bookers</strong>, </p>
-          <p>you can share and exchange  your opinions , inpressions , and emotions</p>
-          <p> about various books!</p>
+      <h2>welcome to<span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers  !!</strong></h2>
+      <p>In <span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Bookers,</strong><br>you can share and exchange your opinions , inpressions , and emotions<br>about various books!</p>
 
-    <div class="btn-wrapper">
-      <div class="row">
-         <p><a class="btn btn-info col-xs-10 col-xs-offset-1 sign_in" href="/users/sign_in">Log in</a></p>
-      </div>
-      <div class="row">
-        <p><a class="btn btn-success col-xs-10 col-xs-offset-1 sign_up" href="/users/sign_up">Sign Up</a></p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      </div>
-    </div>
-
-    <footer>
-  <div class="container">
-  	<div class="row">
-    	<div class="col-xs-3 col-xs-offset-9">
-    		<p>CopyRight Infratop.inc</p>
-    	</div>
+       <%= link_to "Log in",new_user_session_path, class: "sign_in btn btn-info col-xs-10 col-xs-offset-1" %>
+      <%= link_to "Sign up",new_user_registration_path, class: "sign_up btn btn-success col-xs-10 col-xs-offset-1" %>
+       </div>
     </div>
   </div>
-</footer>
 
-
-  
-
-</body></html>

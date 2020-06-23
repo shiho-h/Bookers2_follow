@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
-	 def blogs
-  end
+	before_action :authenticate_user!
 
   def index
     @books = Book.all
@@ -9,11 +8,15 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @user = @book.user
+    @post = Book.new
   end
 
 
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
+
      if @book.save
       #サクセスメッセージ　@book, notice : ""の形はエラーが起きる
       flash[:notice] = 'Book was successfully created.'
@@ -25,8 +28,12 @@ class BooksController < ApplicationController
     end
   end
 
+
   def edit
     @book = Book.find(params[:id])
+    if current_user.id != @book.user_id
+      redirect_to books_path
+    end
   end
 
   def update
@@ -43,8 +50,8 @@ class BooksController < ApplicationController
 
 
   def destroy
-    book = Book.find(params[:id])
-    book.destroy
+    @book = Book.find(params[:id])
+    @book.destroy
     redirect_to books_path
   end
 

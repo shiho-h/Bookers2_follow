@@ -1,0 +1,20 @@
+    <h1>User info</h1>
+      <div>
+     <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%= user.name %></th>
+         </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+
+      <% if user == current_user %>
+     <%= link_to '編集する',edit_user_path(current_user.id),class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
+     <% end %>
