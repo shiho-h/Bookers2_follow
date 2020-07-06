@@ -17,5 +17,7 @@ devise_for :users, controllers: {
 
 resources :users, only: [:show, :edit, :update, :index,]
 
-resources :books
+resources :books do
+ resource :favorites, only: [:create, :destroy]
+end
 end
