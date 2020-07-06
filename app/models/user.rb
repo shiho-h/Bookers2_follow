@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
 #Bookアソシエーション
 has_many :books
+#favoriteアソシエーション
+has_many :favorites, dependent: :destroy
 #プロフィール画像
 attachment :profile_image
 

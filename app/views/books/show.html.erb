@@ -24,11 +24,29 @@
 <th><%= @book.body %></th>
 
 
-<tb>
+<th>
 <% if @book.user == current_user %>
-<button type="button" class="btn btn-info"><%= link_to "Edit",edit_book_path %></button>
-  <button type="button" class="btn btn-danger"><%= link_to "Destroy", book_path, method: :delete %></button>
-</tb>
+<%= link_to "Edit",edit_book_path %>
+|
+<%= link_to "Destroy", book_path, method: :delete %>
+</th>
+<% end %>
+
+<!-- ファボ機能 -->
+<th>
+<% if @book.favorited_by?(current_user) %>
+
+  <%= link_to book_favorites_path(@book), method: :delete do %>
+
+  <%= @book.favorites.count %> <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  <% end %>
+</th>
+<th>
+<% else %>
+<%= link_to book_favorites_path(@book), method: :post do %>
+    <%= @book.favorites.count %>  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  <% end %>
+</th>
 <% end %>
 
     </tr>
