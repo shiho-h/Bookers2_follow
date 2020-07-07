@@ -9,6 +9,8 @@ class User < ApplicationRecord
 has_many :books
 #favoriteアソシエーション
 has_many :favorites, dependent: :destroy
+#コメント機能
+has_many :book_comments, dependent: :destroy
 #プロフィール画像
 attachment :profile_image
 
