@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row">
       <div class="col-xs-3">
-    <%= render 'users/list',{user:current_user} %>
+    <%= render 'users/list',user:@user %>
     <%= render 'books/newbook',book:@book %>
+
+
       </div>
 
       <div class="col-xs-9">
@@ -39,7 +41,7 @@
               <%= book.favorites.count %> <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
               <% end %>
 
-              
+
               <% else %>
               <%= link_to book_favorites_path(book), method: :post do %>
               <%= book.favorites.count %>  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>

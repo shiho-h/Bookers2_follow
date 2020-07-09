@@ -21,4 +21,13 @@ resources :books do
  resource :favorites, only: [:create, :destroy]
  resources :book_comments, only: [:create, :destroy]
 end
+
+#フォロー機能
+resources :users do
+    member do
+     get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
+
 end

@@ -9,7 +9,7 @@
       <div class="col-xs-3">
     <%= render 'users/list',{user:current_user} %>
      <%= render 'books/newbook',book:@book %>
-      </div>
+    </div>
 
       <div class="col-xs-9">
       <table class="table table-striped">
@@ -18,6 +18,10 @@
             <tr>
               <th>Image</th>
               <th>name</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
 
@@ -29,6 +33,21 @@
               </td>
               <td>
                 <%= user.name %>
+              </td>
+              
+              <td>
+              フォロー数
+
+            <%= user.followings.count %>
+
+          </td>
+            <td>フォロワー数
+
+            <%= user.followers.count %>
+
+          </td>
+              <td>
+                <%= render 'users/follow_form', user: user %>
               </td>
               <td>
                 <%= link_to "Show",user_path(user), class: "user_#{user.id}" %>
